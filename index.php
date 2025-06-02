@@ -22,7 +22,7 @@ function postLogin() {
 
 /**
  * @route GET /get-data
- * @tag Secure
+ * @tag Other Group
  * @desc Public GET endpoint with query params
  * @response 200 {"message":"This is public GET data","params":{"name":"value"}}
  */
@@ -366,7 +366,7 @@ HTML;
 
         $openapi = [
             'openapi' => '3.0.0',
-            'info' => ['title' => 'Secure API', 'version' => '1.0.0'],
+            'info' => ['title' => 'Easy API', 'version' => '1.0.0'],
             'tags' => array_values($tags),
             'paths' => $paths,
             'components' => [
