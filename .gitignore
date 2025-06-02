@@ -1,0 +1,12 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore environment and config
+.env
+
+# Ignore logs
+*.log
+
+#image file
+*.webp
