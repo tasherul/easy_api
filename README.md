@@ -56,9 +56,9 @@ Easy API will automatically generate endpoints based on your definitions.
 * @desc Login and receive JWT token
 * @tag Public
 * @body {"username":"admin","password":"password"}
-* @response 200 {"token":"<jwt_token>"}
+* @response 200 {"message":"Hello, world!"}
 function sayHello() {
-    return ['message' => 'Hello, world!'];
+    return App::respond(['message' => 'Hello, world!']);
 }
 ```
 Visit `/docs` to interact with the auto-generated API documentation.
