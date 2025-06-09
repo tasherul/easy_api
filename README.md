@@ -2,7 +2,7 @@
 
 A single PHP file to automatically generate a RESTful API with JWT authentication for your functions. Just define your functions, and Easy API handles the rest!
 
-![Demo](https://raw.githubusercontent.com/tasherul/easy_api/refs/heads/main/demo.webp) *https://github.apitsoft.com/easy_api/docs*
+![Demo](https://raw.githubusercontent.com/tasherul/easy_api/refs/heads/main/demo.webp) *https://easy_api.apitsoft.com/docs*
 
 
 ![Demo](https://raw.githubusercontent.com/tasherul/easy_api/refs/heads/main/essy_api.png) 
@@ -14,6 +14,8 @@ A single PHP file to automatically generate a RESTful API with JWT authenticatio
 - 🔍 **Auto-Documentation** - Built-in API documentation
 - 🚦 **Debug Mode** - Toggle debugging with `.env` setting
 - � **Lightweight** - No heavy frameworks or dependencies
+
+### ⛁ If you want to add a `mysql` easy coding then check on [`tasherul/easy_db`](https://github.com/tasherul/easy_db).
 
 ## Installation ⚡
 
