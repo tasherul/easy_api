@@ -11,11 +11,13 @@
  */
 function postLogin() {
     $input = json_decode(file_get_contents('php://input'), true);
-    if ($input['username'] === 'admin' && $input['password'] === 'password') {
-        $header = App::b64url(json_encode(['alg' => 'HS256', 'typ' => 'JWT']));
-        $payload = App::b64url(json_encode(['user' => 'admin', 'iat' => time(), 'exp' => time() + 3600]));
-        $signature = App::b64url(App::hmac("$header.$payload"));
-        App::respond(['token' => "$header.$payload.$signature"]);
+    if( isset($input['username'])  && isset($input['password']) ){
+        if ($input['username'] === 'admin' && $input['password'] === 'password') {
+            $header = App::b64url(json_encode(['alg' => 'HS256', 'typ' => 'JWT']));
+            $payload = App::b64url(json_encode(['user' => 'admin', 'iat' => time(), 'exp' => time() + 3600]));
+            $signature = App::b64url(App::hmac("$header.$payload"));
+            App::respond(['token' => "$header.$payload.$signature"]);
+        }
     }
     App::respond(['error' => 'Invalid credentials'], 401);
 }
@@ -366,7 +368,18 @@ HTML;
 
         $openapi = [
             'openapi' => '3.0.0',
-            'info' => ['title' => 'Easy API', 'version' => '1.0.0'],
+            'info' => [
+            'title' => 'Easy API', 
+            'version' => '1.2.0',     
+            'description' => '🛡️ JWT Authentication - Secure your API endpoints automatically<br>
+                            🔌 Zero Configuration - Just add your functions and it works<br>
+                            📦 Single File - Entire solution in one index.php file<br>
+                            🔍 Auto-Documentation - Built-in API documentation<br>
+                            🚦 Debug Mode - Toggle debugging with .env setting<br>
+                            � Lightweight - No heavy frameworks or dependencies. <br><br>
+                          <b>Download:</b> <a href="https://github.com/tasherul/easy_api">https://github.com/tasherul/easy_api</a> <br>
+                          <b>Author:</b> Tasherul Islam, <br>
+                          <b>support:</b> tasherulislam@gmail.com'],
             'tags' => array_values($tags),
             'paths' => $paths,
             'components' => [
